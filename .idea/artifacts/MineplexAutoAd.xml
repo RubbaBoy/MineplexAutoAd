@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MineplexAutoAd">
+    <output-path>E:/_Plugin Compile_</output-path>
+    <root id="archive" name="MineplexAutoAd.jar">
+      <element id="module-output" name="MineplexAutoAds" />
+    </root>
+  </artifact>
+</component>
