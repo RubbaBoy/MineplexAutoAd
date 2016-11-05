@@ -2,6 +2,8 @@ package com.uddernetworks.mineplex.main;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,14 +38,20 @@ public class Main {
                             p.start();
 
                             Thread.sleep(5000);
-                            WebDriver driver = new ChromeDriver();
+                            ChromeOptions options = new ChromeOptions();
+                            options.addArguments("window-size=20,20");
+
+                            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                            WebDriver driver = new ChromeDriver(capabilities);
                             driver.get("http://ads.mineplex.com/?server_id=1&player_uuid=" + UUIDFetcher.getUUIDOf(name));
 
-                            Thread.sleep(40000);
+                            Thread.sleep(43000);
                             driver.quit();
-                            Thread.sleep(1000);
+                            Thread.sleep(4000);
 
                             Runtime.getRuntime().exec("taskkill /F /IM MinecraftClient.exe");
+                            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
 
                             lastTime = System.currentTimeMillis() + 3600000;
                         } else if (lastTime <= System.currentTimeMillis()) {
@@ -59,14 +67,20 @@ public class Main {
                             p.start();
 
                             Thread.sleep(5000);
-                            WebDriver driver = new ChromeDriver();
+                            ChromeOptions options = new ChromeOptions();
+                            options.addArguments("window-size=20,20");
+
+                            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                            WebDriver driver = new ChromeDriver(capabilities);
                             driver.get("http://ads.mineplex.com/?server_id=1&player_uuid=" + UUIDFetcher.getUUIDOf(name));
 
-                            Thread.sleep(40000);
+                            Thread.sleep(43000);
                             driver.quit();
-                            Thread.sleep(1000);
+                            Thread.sleep(4000);
 
                             Runtime.getRuntime().exec("taskkill /F /IM MinecraftClient.exe");
+                            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
 
                             lastTime = System.currentTimeMillis() + 3600000;
                         }
